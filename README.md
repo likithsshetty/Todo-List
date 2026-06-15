@@ -1,6 +1,7 @@
 # todo-list
 
-A premium, glassmorphic, responsive Todo Application with a **Flask (Python) REST API** backend, a **Next.js (React / TypeScript)** frontend, and **MongoDB** database storage.
+A premium, glassmorphic, responsive Todo Application built with **Antigravity** 🚀, featuring a **Flask (Python) REST API** backend, a **Next.js (React / TypeScript)** frontend, and **MongoDB** database storage.
+
 
 ## Key Features
 * 🔒 **Secure User Authentication**: Sign Up, Sign In, and Sign Out using JWT (Json Web Tokens) and BCrypt password hashing.
