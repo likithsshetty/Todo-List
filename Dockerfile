@@ -14,6 +14,7 @@ WORKDIR /app
 
 # Copy the startup script
 COPY start.sh /app/start.sh
+RUN sed -i 's/\r$//' /app/start.sh
 RUN chmod +x /app/start.sh
 
 # Expose Next.js and Flask ports
