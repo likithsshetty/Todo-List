@@ -9,7 +9,10 @@ REPO=${REPO_URL:-https://github.com/likithsshetty/Todo-List.git}
 TARGET_DIR="/app/todo-list"
 
 # 1. Clone or pull the repository
-if [ -d "$TARGET_DIR/.git" ]; then
+if [ "$LOCAL_DEV" = "true" ]; then
+    echo "Running in local development mode. Using mounted workspace files."
+    cd "$TARGET_DIR"
+elif [ -d "$TARGET_DIR/.git" ]; then
     echo "Local repository directory exists. Fetching latest updates..."
     cd "$TARGET_DIR"
     git fetch --all

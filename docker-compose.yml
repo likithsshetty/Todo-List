@@ -17,11 +17,14 @@ services:
       - "5000:5000"
     depends_on:
       - mongo
+    volumes:
+      - .:/app/todo-list
     environment:
       - REPO_URL=https://github.com/likithsshetty/Todo-List.git
       - JWT_SECRET=8f45a0bdf196d09df24f1c7d24ab9668
       - FLASK_PORT=5000
       - MONGO_URI=mongodb://mongo:27017/todo_app
+      - LOCAL_DEV=true
 
 volumes:
   mongo-data:
