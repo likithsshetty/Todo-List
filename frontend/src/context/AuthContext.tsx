@@ -7,7 +7,7 @@ export interface User {
   id: string;
   username: string;
   email: string;
-  role: string;
+  is_admin: boolean;
 }
 
 interface AuthContextType {

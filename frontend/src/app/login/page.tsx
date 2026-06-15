@@ -51,7 +51,7 @@ export default function LoginPage() {
       <div className={`glass-container ${styles.card}`}>
         <div className={styles.header}>
           <h1 className={styles.title}>Welcome Back</h1>
-          <p className={styles.subtitle}>Sign in to your CloudTodo account</p>
+          <p className={styles.subtitle}>Sign in to your TODO List account</p>
         </div>
 
         {error && <div className={styles.errorAlert}>{error}</div>}

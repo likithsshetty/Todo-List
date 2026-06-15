@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CloudTodo - Premium Task Manager",
+  title: "TODO List - Premium Task Manager",
   description: "Secure, beautiful, and feature-rich Todo Application with user authentication and admin controls.",
 };
 

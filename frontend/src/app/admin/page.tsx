@@ -10,7 +10,7 @@ interface AdminUser {
   id: string;
   username: string;
   email: string;
-  role: string;
+  is_admin: boolean;
   created_at: string;
   todo_count: number;
 }
@@ -31,7 +31,7 @@ export default function AdminPage() {
     if (!loading) {
       if (!user) {
         router.push("/login");
-      } else if (user.role !== "admin") {
+      } else if (!user.is_admin) {
         router.push("/todos"); // Redirect standard users
       } else {
         fetchUsers();
@@ -94,7 +94,7 @@ export default function AdminPage() {
   const totalUsers = users.length;
   const totalTodos = users.reduce((sum, u) => sum + (u.todo_count || 0), 0);
 
-  if (loading || !user || user.role !== "admin") {
+  if (loading || !user || !user.is_admin) {
     return (
       <div className={styles.loaderContainer}>
         <div className={styles.spinner}></div>
@@ -176,8 +176,8 @@ export default function AdminPage() {
                         </td>
                         <td>{u.email}</td>
                         <td>
-                          <span className={styles.roleTag} data-role={u.role}>
-                            {u.role.toUpperCase()}
+                          <span className={styles.roleTag} data-role={u.is_admin ? "admin" : "user"}>
+                            {u.is_admin ? "ADMIN" : "USER"}
                           </span>
                         </td>
                         <td>

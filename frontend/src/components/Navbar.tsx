@@ -29,11 +29,11 @@ export const Navbar: React.FC = () => {
     <nav className={styles.navbar}>
       <div className={styles.logo}>
         <span className={styles.icon}>⚡</span>
-        <span className={styles.title}>CloudTodo</span>
+        <span className={styles.title}>TODO List</span>
       </div>
       
       <div className={styles.navLinks}>
-        {user.role === "admin" && (
+        {user.is_admin && (
           <>
             {pathname === "/admin" ? (
               <Link href="/todos" className={styles.link}>
@@ -50,8 +50,8 @@ export const Navbar: React.FC = () => {
 
       <div className={styles.userSection}>
         <div className={styles.userInfo}>
-          <span className={styles.roleTag} data-role={user.role}>
-            {user.role.toUpperCase()}
+          <span className={styles.roleTag} data-role={user.is_admin ? "admin" : "user"}>
+            {user.is_admin ? "ADMIN" : "USER"}
           </span>
           <span className={styles.username}>@{user.username}</span>
         </div>
