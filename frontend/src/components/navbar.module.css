@@ -1,0 +1,238 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(17, 18, 24, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.link, .linkAdmin {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.link {
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.link:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.linkAdmin {
+  color: #a855f7;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+.linkAdmin:hover {
+  background: rgba(168, 85, 247, 0.2);
+  border-color: rgba(168, 85, 247, 0.5);
+  transform: translateY(-1px);
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.username {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.roleTag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.roleTag[data-role="admin"] {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.roleTag[data-role="user"] {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.logoutBtn, .deleteBtn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
+
+.logoutBtn {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.logoutBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.deleteBtn {
+  background: transparent;
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.deleteBtn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+/* Modal Styling */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal {
+  background: #15171e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #f87171;
+}
+
+.modal p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.cancelBtn, .confirmDeleteBtn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.cancelBtn {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.cancelBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.confirmDeleteBtn {
+  background: #ef4444;
+  color: white;
+}
+
+.confirmDeleteBtn:hover:not(:disabled) {
+  background: #dc2626;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.errorText {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

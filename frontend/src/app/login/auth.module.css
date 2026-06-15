@@ -1,0 +1,100 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding: 2rem;
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  padding: 2.5rem;
+  animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.submitBtn {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.errorAlert {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.switchText {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.switchLink {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.switchLink:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

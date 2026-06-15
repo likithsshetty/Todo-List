@@ -1,0 +1,304 @@
+.loaderContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-left-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.spinnerSmall {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-left-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.main {
+  flex: 1;
+  padding: 3rem 1.5rem;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.welcomeSection {
+  margin-bottom: 0.5rem;
+}
+
+.welcomeSection h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.welcomeSection p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.errorAlert {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #f87171;
+  padding: 0.85rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.addForm {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1.25rem;
+}
+
+.addInput {
+  flex: 1;
+}
+
+.addButton {
+  white-space: nowrap;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filterBtn {
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filterBtn:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+}
+
+.activeFilter {
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.searchContainer {
+  flex: 1;
+  max-width: 260px;
+  min-width: 180px;
+}
+
+.searchInput {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.todoCard {
+  padding: 1.5rem;
+}
+
+.listLoader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 3rem 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.todoList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: all 0.2s ease;
+}
+
+.todoItem:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.06);
+  transform: translateX(2px);
+}
+
+.completedItem {
+  opacity: 0.5;
+}
+
+.completedItem .todoTitle {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+}
+
+.checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.checkbox:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.checked {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.checked:hover:not(:disabled) {
+  background: var(--success-hover) !important;
+  border-color: var(--success-hover) !important;
+}
+
+.todoTitle {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--text-primary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.todoItem:hover .actions {
+  opacity: 1;
+}
+
+.actionBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.actionBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.deleteAction:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* Inline Edit Mode */
+.editWrapper {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+  align-items: center;
+}
+
+.editInput {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+}
+
+.saveBtn, .cancelBtn {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.5rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+.saveBtn {
+  background: var(--primary);
+  color: white;
+}
+.saveBtn:hover {
+  background: var(--primary-hover);
+}
+
+.cancelBtn {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+}
+.cancelBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
