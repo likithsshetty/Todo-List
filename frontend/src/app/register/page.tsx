@@ -63,7 +63,7 @@ export default function RegisterPage() {
       <div className={`glass-container ${styles.card}`}>
         <div className={styles.header}>
           <h1 className={styles.title}>Create Account</h1>
-          <p className={styles.subtitle}>Get started with your free TODO List manager</p>
+          <p className={styles.subtitle}>Get started with your free todo-list manager</p>
         </div>
 
         {error && <div className={styles.errorAlert}>{error}</div>}

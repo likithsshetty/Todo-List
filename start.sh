@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "========================================="
-echo "Starting TODO List Container Deployment..."
+echo "Starting todo-list Container Deployment..."
 echo "========================================="
 
 # Fallback repo URL

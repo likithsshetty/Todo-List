@@ -29,7 +29,7 @@ export const Navbar: React.FC = () => {
     <nav className={styles.navbar}>
       <div className={styles.logo}>
         <span className={styles.icon}>⚡</span>
-        <span className={styles.title}>TODO List</span>
+        <span className={styles.title}>todo-list</span>
       </div>
       
       <div className={styles.navLinks}>
